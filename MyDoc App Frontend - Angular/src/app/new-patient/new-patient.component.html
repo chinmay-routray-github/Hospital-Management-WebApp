@@ -1,0 +1,78 @@
+<div class="entire">
+    <div class="entire">
+        <br>
+        <h3>Welcome New User !!!</h3>
+        <p>Please complete the Signup process</p>
+    </div>
+    <app-datetime></app-datetime>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-sm-offset-2">
+                <form [formGroup]="newUser" (ngSubmit)="onRegister()">
+                    <div class="form-group">
+                        <label for = "username" > Username </label>
+                        <input
+                        type="text"
+                        id="username"
+                        formControlName="username"
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "email" > Email </label>
+                        <input
+                        type="text"
+                        id="email"
+                        formControlName="email"
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "password" > Password </label>
+                        <input
+                        [type]="!Pass?'password':'text'"
+                        id="password"
+                        formControlName="password"
+                        class="form-control">
+                        <div class="show-password">
+                            <input type="checkbox" id="show-password" (click)="showPassword()"> &nbsp;
+                            <label>Show Password</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for = "phone" > Phone no. </label>
+                        <input
+                        type="text"
+                        id="phone"
+                        formControlName="phone"
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "question" > Secret Question </label>
+                        <select id="question" class="form-control" formControlName="question">
+                            <option value="first pet"> What is your first pet? <span class="caret"></span></option>
+                            <option value="first school"> What is your first school? </option>
+                            <option value="birth city"> What is your birth city? </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for = "answer" > Answer </label>
+                        <input
+                        type="text"
+                        id="answer"
+                        formControlName="answer"
+                        class="form-control">
+                    </div>
+                    <br>
+                    <div *ngIf="err">
+                        <h6>Username already taken. Please choose another username.</h6>
+                    </div>
+                    <br>
+                    <button class = "btn btn-success" type="submit"
+                    [disabled]="!newUser.valid && newUser.touched"> Register </button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+

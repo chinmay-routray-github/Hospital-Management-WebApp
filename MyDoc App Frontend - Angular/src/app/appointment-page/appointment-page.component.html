@@ -1,0 +1,73 @@
+<div>
+    <app-header></app-header>
+    <app-datetime></app-datetime>
+    <div class="container" class="extra">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-sm-offset-2">
+                <div>
+                    <button class="btn btn-primary" type="button"(click)="getUserBookings()">Show My Appointments</button>
+                </div>
+                <br>
+                <div *ngIf="!err">
+                    <div *ngFor="let arrElement of arr" >
+                        <div >
+                            <br>
+                        <p>Booking ID : <span>{{ arrElement.id}}</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
+                            Doctor name : <span>Dr. {{arrElement.doctor_name}}</span>
+                        </p>
+                        
+                        <br>
+                        <p>Patient name : <span>{{arrElement.patient_name}}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            Patient gender : <span>{{arrElement.patient_gender}}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            Patient age : <span>{{arrElement.patient_age}}</span>
+                        </p>
+                        <br>
+                        <p>Symptoms : <span>{{arrElement.symptoms}}</span></p>
+                        <br>
+                        <p>Appointment Date : <span>{{arrElement.date}}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            Appointment Time : <span>{{arrElement.time}}</span>
+                        </p>
+                        <br>
+                        <div class="modifyButton">
+                            <button class="btn btn-warning" type="button"
+                        (click)="modifyBooking(arrElement.id, arrElement.doctor_name, arrElement.patient_name,
+                         arrElement.patient_gender, arrElement.patient_age, arrElement.symptoms, 
+                         arrElement.date, arrElement.time)">Modify Appointment</button>
+                            <br>
+                        </div>
+                        <div class="deleteButton">
+                            <button class="btn btn-danger" type="button"
+                            (click)="deleteBooking(arrElement.id)">Delete Appointment</button>
+                            <br>
+                        </div>
+                        <hr>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="err" class="exception">
+        <p> You have no appointments.</p>
+    </div>
+    <br>
+    <!-- <div class="container" *ngIf="detailMode">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-sm-offset-2">
+                <form [formGroup]="cancelBooking" (ngSubmit)="deleteBooking()">
+                    <div class="form-group">
+                        <label for = "bookingId" > Appointment ID (to be cancelled) </label>
+                        <input
+                        type="text"
+                        id="bookingId"
+                        formControlName="bookingId"
+                        class="form-control">
+                    </div>
+                    <br>
+                    <button class="btn btn-danger" type="submit"
+                    [disabled]="!cancelBooking.valid && cancelBooking.touched">Delete Appointment</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+</div>

@@ -1,0 +1,135 @@
+<div class="entire">
+    <br>
+    <div class="head">
+        <h3>Welcome to {{title}}</h3>
+        <h5>Your own Hospital Management App</h5>
+    </div>
+    <app-datetime></app-datetime>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-sm-offset-2">
+                <form (ngSubmit)="onUserLogin(f)" #f="ngForm">
+                    <div class="form-group">
+                        <label for = "username">Username </label>
+                        <br>
+                        <input type="text" 
+                        id="username"
+                        class="form-control"
+                        ngModel
+                        name="username"
+                        required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for = "password">Password</label>
+                        <br>
+                        <input [type]="!Pass? 'password':'text' "
+                        id="password"
+                        class="form-control"
+                        ngModel
+                        name="password"
+                        required>
+                    </div>
+                    <div class="show-password">
+                        <input type="checkbox" id="show-password" (click)="showPassword()"> &nbsp;
+                        <label>Show Password</label>
+                    </div>
+                    <span class="bi bi-eye-slash"><i class="fa fa-eye" id="togglePassword"></i></span>
+                    <br>
+                    <button class="btn btn-primary" 
+                    type="submit"
+                    [disabled]="!f.valid && f.touched">Login</button>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    <button class="btn btn-primary" 
+                    type="button"
+                    (click)="onSignup()">Signup</button>
+                </form>
+                <!-- <br>
+                <div>
+                    <h6>New Users! Please SignUp</h6>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+<div class="quotes">
+    <h3>You will be great with Us because We care ! </h3>
+    <h3>And Caring is our Responsibility </h3>
+</div>
+<div class="doclist">
+    <div class="column">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-sm-offset-2">
+                <br>
+                <h5>List of Available Doctors :</h5>
+                <div *ngFor="let brrElement of brr">
+                    <br>
+                    <h6>Dr. <span>{{ brrElement.name}}</span>, <span>{{brrElement.specialization}}</span>, <span>{{brrElement.experience}} years of Experience</span></h6>
+                    <br>
+                    <!-- <p>Your specialization is <span>{{brrElement.specialization}}</span></p>
+                    <p>You have <span>{{brrElement.experience}} years of experience.</span></p> -->
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+    <div class="comments">
+        <div class="column">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-sm-offset-2">
+                    <br>
+                    <br>
+                    <br>
+                    <h3 class="say"> What people say about Us : </h3>
+                    <br>
+                    <h5 class="say">"God bless you doctor. you could have spent only 10 minutes to understand my case and then tell me the medicines like many doctors. 
+                        but even at this late time you had the caring attitude to listen and understand my complex case for 20 minutes and help me."
+                    </h5>
+                    <br>
+                    <h4 class="author">
+                        - Snigdha Dasgupta (4.7/5)
+                    </h4>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h5 class="say">Thank you doctor. overall i am very happy. but it would have been better if you could started the consultation a bit sooner.
+                         the support team told me it starts in 5 minutes, but i had to wait for about 15 minutes before our consultation began. but otherwise"
+                    </h5>
+                    <br>
+                    <h4 class="author">
+                        - Anurag Thapar (4.8/5)
+                    </h4>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h5 class="say">"Good doctor. diagosed correctly and quickly. so thank you doctor. but next time, 
+                        it will be great if we could finish the consultation in 1 go. 
+                        I know you took that 30 minutes break in the middle because you had to help another patient who was more serious"
+                    </h5>
+                    <br>
+                    <h4 class="author">
+                        - Basawraj Birla (4.4/5)
+                    </h4>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

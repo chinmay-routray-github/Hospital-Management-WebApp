@@ -1,0 +1,84 @@
+<div>
+    <app-header></app-header>
+    <app-datetime></app-datetime>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-sm-offset-2">
+                <form [formGroup]="modifyBooking" (ngSubmit)="onModify()">
+                    <div class="form-group">
+                        <label for = "doctorName" > Choose a Doctor </label>
+                        <select id="doctorName" class="form-control" formControlName="doctorName">
+                            <option value="Madhav"> Dr. Madhav </option>
+                            <option value="Keshav"> Dr. Keshav </option>
+                            <option value="Aman"> Dr. Aman </option>
+                            <option value="Shweta"> Dr. Shweta </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for = "patientName" > Patient Name </label>
+                        <input
+                        type="text"
+                        id="patientName"
+                        formControlName="patientName"
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "patientGender" > Patient Gender </label>
+                        <select id="patientGender" class="form-control" formControlName="patientGender">
+                            <option value="Male"> Male </option>
+                            <option value="Female"> Female </option>
+                            <option value="Other"> Other </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for = "patientAge" > Patient Age </label>
+                        <input
+                        type="text"
+                        id="patientAge"
+                        formControlName="patientAge"
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "symptoms" > Symptoms Experienced </label>
+                        <textarea
+                        type="text"
+                        id="symptoms"
+                        formControlName="symptoms"
+                        class="form-control" rows="5">
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for = "date" > Date </label>
+                        <input
+                        min= "{{date | date : 'yyyy-MM-dd'}}"
+                        max="2024-12-31"
+                        type="date"
+                        id="date"
+                        formControlName="date"
+                        class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for = "time" > Time </label>
+                        <select id="timeslots" class="form-control" formControlName="time">
+                            <option value="9:00-10:00"> 9:00-10:00 </option>
+                            <option value="10:00-11:00"> 10:00-11:00 </option>
+                            <option value="11:00-12:00"> 11:00-12:00 </option>
+                            <option value="12:00-13:00"> 12:00-13:00 </option>
+                            <option value="14:00-15:00"> 14:00-15:00 </option>
+                            <option value="15:00-16:00"> 15:00-16:00 </option>
+                        </select>
+                    </div>
+                    <br>
+                    <div *ngIf="err">
+                        <h6> Sorry, requested slot is not available. Please choose another date or time for booking appointment.</h6>
+                    </div>
+                    <br>
+                    <button class = "btn btn-success" type="submit"
+                    [disabled]="!modifyBooking.valid && modifyBooking.touched"> Confirm Changes </button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>

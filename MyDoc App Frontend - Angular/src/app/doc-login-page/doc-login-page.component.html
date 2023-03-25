@@ -1,0 +1,131 @@
+<div class="entire">
+    <br>
+    <div class="head">
+        <h3>Welcome to {{title}}</h3>
+        <h5>Your own Hospital Management App</h5>
+    </div>
+    <app-datetime></app-datetime>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-sm-offset-2">
+                <form (ngSubmit)="onLogin(f)" #f="ngForm">
+                    <div class="form-group">
+                        <label for = "username">Username </label>
+                        <br>
+                        <input type="text" 
+                        id="username"
+                        class="form-control"
+                        ngModel
+                        name="username"
+                        required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for = "password">Password</label>
+                        <br>
+                        <input [type]="!Pass? 'password':'text' "
+                        id="password"
+                        class="form-control"
+                        ngModel
+                        name="password"
+                        required>
+                    </div>
+                    <div class="show-password">
+                        <input type="checkbox" id="show-password" (click)="showPassword()"> &nbsp;
+                        <label>Show Password</label>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" 
+                    type="submit"
+                    [disabled]="!f.valid && f.touched">Login</button>
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
+    <br>
+        <br>
+        <br>
+        <br>
+    
+</div>
+<div class="quotes">
+    <h3>You will be great with Us because We care ! </h3>
+    <h3>And Caring is our Responsibility </h3>
+</div>
+<div class="doclist">
+    <div class="column">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-sm-offset-2">
+                <br>
+                <h5>List of Available Doctors :</h5>
+                <div *ngFor="let brrElement of brr">
+                    <br>
+                    <h6>Dr. <span>{{ brrElement.name}}</span>, <span>{{brrElement.specialization}}</span>, <span>{{brrElement.experience}} years of Experience</span></h6>
+                    <br>
+                    <!-- <p>Your specialization is <span>{{brrElement.specialization}}</span></p>
+                    <p>You have <span>{{brrElement.experience}} years of experience.</span></p> -->
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+    <div class="comments">
+        <div class="column">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-sm-offset-2">
+                    <br>
+                    <br>
+                    <br>
+                    <h3 class="say"> What people say about Us : </h3>
+                    <br>
+                    <h5 class="say">"This is the first time i spoke to a doctor through an application. 
+                        first i began chatting and then requested for a call. thank you doctor for being kind. 
+                        I know that normally i ask many questions and many doctors get a bit irritated, but you were kind enough."
+                    </h5>
+                    <br>
+                    <h4 class="author">
+                        - Lalit Singh (4.3/5)
+                    </h4>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h5 class="say">"very caring doctor. enquired about entire history of case before making his opinion about my condition. 
+                        than when giving medicines, patiently explained uses for every medicine given.
+                         normally doctors in physical world, dont give enough time because they care"
+                    </h5>
+                    <br>
+                    <h4 class="author">
+                        - Farhan Qureshi (4.6/5)
+                    </h4>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h5 class="say">"i was skeptical to talk to doctor online. but i must say i am really happy. 
+                        doctor was very patient, he asked me many questions to understand the problem, and then explained me the problem. 
+                        also he has given medicines and explained about every medicine. Great experience"
+                    </h5>
+                    <br>
+                    <h4 class="author">
+                        - Ranchoddas Shyamaldas Chanchad (4.9/5)
+                    </h4>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+

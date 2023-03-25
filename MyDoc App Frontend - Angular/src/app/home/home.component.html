@@ -1,0 +1,120 @@
+<div>
+    <app-header class="header"></app-header>
+    <app-datetime></app-datetime>
+    <div class="container" class="extra">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-sm-offset-2">
+                <div *ngFor="let brrElement of brr">
+        <br>
+        <p>Hi, <span>{{ brrElement.name}} !</span></p>
+        
+        
+        <!-- <p>Your email is <span>{{brrElement.email}}</span></p> -->
+    </div>
+    
+    <br>
+            </div>
+        </div>
+    </div>
+    <div class="container" >
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-sm-offset-2">
+                <div>
+                    <button class="btn btn-primary" type="button"(click)="getUserDetails()">Show My Details</button>
+                </div>
+                <div *ngIf="detailMode && !editMode">
+                    <div *ngFor="let arrElement of arr" >
+                        <br>
+                        <p>User name : <span>{{arrElement.name}}</span></p>
+                        <br>
+                        <p>Email : <span>{{arrElement.email}}</span></p>
+                        <br>
+                        <p>Phone : <span>{{arrElement.phone}}</span></p>
+                        <br>
+                        <p>Secret Question : <span>{{arrElement.question}}</span></p>
+                        <br>
+                        <p>Answer : <span>{{arrElement.answer}}</span></p>
+                        <hr>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="detailMode && !editMode" class="editButton">
+        <button class="btn btn-primary" type="button"
+                    (click)="onEditButton()">Edit My Details</button>
+    </div>
+    <br>
+    <div class="container" *ngIf="editMode && detailMode">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-sm-offset-2">
+                <form [formGroup]="userEditform" (ngSubmit)="editUserDetails()">
+                    <div *ngIf="editMode">
+                        <!-- <div class="form-group">
+                            <label for = "username" > Username </label>
+                            <input
+                            type="text"
+                            id="username"
+                            formControlName="username"
+                            class="form-control">
+                        </div> -->
+                        <div class="form-group">
+                            <label for = "email" > Email </label>
+                            <input
+                            type="text"
+                            id="email"
+                            formControlName="email"
+                            class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for = "password" > Password </label>
+                            <input
+                            [type]="!Pass? 'password':'text'"
+                            id="password"
+                            formControlName="password"
+                            class="form-control">
+                            <div class="show-password">
+                                <input type="checkbox" id="show-password" (click)="showPassword()"> &nbsp;
+                                <label>Show Password</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for = "phone" > Phone no. </label>
+                            <input
+                            type="text"
+                            id="phone"
+                            formControlName="phone"
+                            class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for = "question" > Secret Question </label>
+                            <select id="question" class="form-control" formControlName="question">
+                                <option value="first pet"> What is your first pet? </option>
+                                <option value="first school"> What is your first school? </option>
+                                <option value="birth city"> What is your birth city? </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for = "answer" > Answer </label>
+                            <input
+                            type="text"
+                            id="answer"
+                            formControlName="answer"
+                            class="form-control">
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn btn-success" type="submit"
+                    [disabled]="!userEditform.valid && userEditform.touched">Confirm Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="deleteButton" *ngIf="detailMode">
+        <button class="btn btn-danger" type="button"(click)="deleteUser()">Delete My Account</button>
+        <br>
+    </div>
+    <br>
+</div>

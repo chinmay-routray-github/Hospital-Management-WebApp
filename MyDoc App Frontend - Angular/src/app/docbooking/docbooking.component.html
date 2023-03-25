@@ -1,0 +1,55 @@
+<div>
+    <app-docheader></app-docheader>
+    <app-datetime></app-datetime>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-sm-offset-2">
+                <div>
+                    <button class="btn btn-primary" type="button"(click)="geDoctorBookings()">Show My Appointments</button>
+                </div>
+                <br>
+                <div *ngIf="!err">
+                    <div *ngFor="let arrElement of arr">
+                        <br>
+                        <p>Booking ID : <span>{{ arrElement.id}}</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        </p>
+                        
+                        <br>
+                        <p>Patient name : <span>{{arrElement.patient_name}}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            Patient gender : <span>{{arrElement.patient_gender}}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            Patient age : <span>{{arrElement.patient_age}}</span>
+                        </p>
+                        <br>
+                        <p>Symptoms : <span>{{arrElement.symptoms}}</span></p>
+                        <br>
+                        <p>Appointment Date : <span>{{arrElement.date}}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            Appointment Time : <span>{{arrElement.time}}</span>
+                        </p>
+                        <br>
+                        
+                        <hr>
+                    </div>
+                </div>
+                <div *ngIf="err">
+                    <h6> You have no appointments.</h6> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div *ngFor="let arrElement of arr">
+        <br>
+        <p>Booking ID : <span>{{ arrElement.id}}</span></p>
+        
+        <br>
+        <p>Doctor name : <span>{{arrElement.doctor_name}}</span></p>
+        <br>
+        <p>Patient name : <span>{{arrElement.patient_name}}</span></p>
+        <br>
+        <p>Appointment Date : <span>{{arrElement.date}}</span></p>
+        <br>
+        <p>Appointment Time : <span>{{arrElement.time}}</span></p>
+        
+        <hr>
+    </div>
+    <br> -->
+</div>

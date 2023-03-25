@@ -1,0 +1,121 @@
+
+<div>
+    <app-docheader></app-docheader>
+    <app-datetime></app-datetime>
+<div class="entire">
+    <div *ngFor="let brrElement of brr" class="extra">
+        <br>
+        <p>Hi, <span>{{ brrElement.name}} !</span></p>
+        <p>Your email is <span>{{brrElement.email}}</span></p>
+        <br>
+        <!-- <p>Your specialization is <span>{{brrElement.specialization}}</span></p>
+        <p>You have <span>{{brrElement.experience}} years of experience.</span></p> -->
+    </div>
+    <div class="container" >
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-sm-offset-2">
+                <div >
+                    <button class="btn btn-primary" type="button"(click)="getDoctorDetails()">Show My Details</button>
+                </div>
+                <div *ngIf="detailMode && !editMode">
+                    <div *ngFor="let arrElement of arr">
+                    
+                        <br>
+                        <p>User name : <span>{{arrElement.name}}</span></p>
+                        <br>
+                        <p>Email : <span>{{arrElement.email}}</span></p>
+                        <br>
+                        <p>Phone no. : <span>{{arrElement.phone}}</span></p>
+                        <br>
+                        <p>Specialization : <span>{{arrElement.specialization}}</span></p>
+                        <br>
+                        <p>Year of Experience : <span>{{arrElement.experience}} years</span></p>
+                        <hr>
+                       
+                    </div>
+                    <br>
+                </div>
+                <div *ngIf="detailMode && !editMode">
+                    <button class="btn btn-primary" type="button"
+                            (click)="onEdit()">Edit My Details</button>
+                    <br>
+                </div>
+                <br>
+                <div class="container" >
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-10 col-md-9 col-sm-offset-1 col-sm-offset-2">
+                            <form [formGroup]="docEditform" (ngSubmit)="editDoctorDetails()">
+                                <div *ngIf="editMode && detailMode">
+                                    <!-- <div class="form-group">
+                                        <label for = "username" > Username </label>
+                                        <input
+                                        type="text"
+                                        id="username"
+                                        formControlName="username"
+                                        class="form-control">
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label for = "email" > Email </label>
+                                        <input
+                                        type="text"
+                                        id="email"
+                                        formControlName="email"
+                                        class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for = "password" > Password </label>
+                                        <input
+                                        [type]="!Pass? 'password':'text'"
+                                        id="password"
+                                        formControlName="password"
+                                        class="form-control">
+                                        <div class="show-password">
+                                            <input type="checkbox" id="show-password" (click)="showPassword()"> &nbsp;
+                                            <label>Show Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for = "phone" > Phone no. </label>
+                                        <input
+                                        type="text"
+                                        id="phone"
+                                        formControlName="phone"
+                                        class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for = "specialization" > Specialization </label>
+                                        <input
+                                        type="text"
+                                        id="specialization"
+                                        formControlName="specialization"
+                                        class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for = "experience" > Year of Experience </label>
+                                        <input
+                                        type="text"
+                                        id="experience"
+                                        formControlName="experience"
+                                        class="form-control">
+                                    </div>
+                                    <button class="btn btn-success" type="submit"
+                                    [disabled]="!docEditform.valid && docEditform.touched">Confirm Changes</button>
+                                </div>
+                                <br>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+    <div class="deleteButton" *ngIf="detailMode">
+        <button class="btn btn-danger" type="button"(click)="deleteDoctor()">Delete My Account</button>
+        <br>
+    </div>
+    <br>
+</div>
+</div>

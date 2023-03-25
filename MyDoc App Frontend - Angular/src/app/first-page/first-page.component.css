@@ -1,0 +1,68 @@
+/* .container{
+    width: 400px;
+    height: 400px;
+    font-size: larger;
+    font-weight: 700;
+    /* border: 5px solid black; */
+    /* margin-left: 800px;
+    margin-top: 60px;
+    padding-left: 50px;
+    padding-top: 40px;
+} */ 
+
+.head{
+    margin-top: 30px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.container{
+    width: 400px;
+    height: 200px;
+    font-size: larger;
+    font-weight: 700;
+    border-radius: 25px;
+    margin-left: 700px;
+    /* margin-top: -100px; */
+    padding-left: 50px;
+    padding-top: 40px;
+    z-index: 20;
+}
+.column{
+    font-size:medium;
+    font-weight: 400;
+    z-index: 50;
+    margin-top: 40px;
+}
+
+.entire{
+    background-image: url("src\assets\app-images\cover-image.jpg");
+    background-size: cover;
+}
+
+.doclist{
+    background-image: url("src\assets\app-images\cover-image2.jpg");
+    background-size: cover;
+}
+
+.quotes{
+    margin-top: 60px;
+    font-family : DejaVu Sans Mono, monospace;
+    text-align: center;
+}
+
+.comments{
+    /* text-align: center; */
+    font-family: Apple Chancery, cursive;
+    background-color: rgb(38, 38, 172);
+    color: white; 
+    
+}
+
+.say{
+    /* text-align: center; */
+    margin-left: 50px;
+}
+
+.author{
+    text-align: right;
+}

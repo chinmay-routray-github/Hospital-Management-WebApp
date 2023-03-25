@@ -1,0 +1,52 @@
+<div class="entire">
+    <br>
+    <p>Make the payment to complete the process !!!</p>
+    <!-- <app-datetime></app-datetime> -->
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-sm-offset-2">
+                <form (ngSubmit)="onPay(f)" #f="ngForm">
+                    <div class="form-group">
+                        <label for = "card">Card Number </label>
+                        <br>
+                        <input type="text" 
+                        id="card"
+                        class="form-control"
+                        ngModel
+                        name="card"
+                        required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for = "expDate">Expiry Date</label>
+                        <br>
+                        <input type="date" 
+                        id="expDate"
+                        class="form-control"
+                        ngModel
+                        name="expDate"
+                        required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for = "CVV">CVV</label>
+                        <br>
+                        <input type="password" 
+                        id="CVV"
+                        class="form-control"
+                        ngModel
+                        name="CVV"
+                        required>
+                    </div>
+                    <br>
+                    <button class="btn btn-success" 
+                    type="submit"
+                    [disabled]="!f.valid && f.touched">Make Payment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+

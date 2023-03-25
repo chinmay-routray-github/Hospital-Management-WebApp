@@ -1,0 +1,58 @@
+
+
+.head{
+    margin-top: 30px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.container{
+    width: 380px;
+    height: 395px;
+    font-size: larger;
+    font-weight: 700;
+    border: 8px outset rgb(111, 183, 196);
+    border-radius: 25px;
+    margin-left: 700px;
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.entire{
+    background-image: url("src\assets\app-images\cover-image.jpg");
+    width:max-content;
+    background-size: cover;
+}
+
+.doclist{
+    background-image: url("src\assets\app-images\cover-image2.jpg");
+    background-size: cover;
+}
+
+.quotes{
+    margin-top: 60px;
+    font-family : DejaVu Sans Mono, monospace;
+    text-align: center;
+}
+
+.comments{
+    /* text-align: center; */
+    font-family: Apple Chancery, cursive;
+    background-color: rgb(38, 38, 172);
+    color: white; 
+    
+}
+
+.say{
+    /* text-align: center; */
+    margin-left: 50px;
+}
+
+.author{
+    text-align: right;
+}
+
+.show-password{
+    font-size:smaller;
+    font-family:monospace;
+}

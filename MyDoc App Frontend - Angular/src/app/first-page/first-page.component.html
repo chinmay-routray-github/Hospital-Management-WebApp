@@ -1,0 +1,113 @@
+
+    <div class="entire">
+        <br>
+        <div class="head">
+            <h3>Welcome to {{title}}</h3>
+            <h5>Your own Hospital Management App</h5>
+        </div>
+        <app-datetime></app-datetime>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-sm-offset-2">
+                    <div>
+                        I want to login as :
+                    </div>
+                    <br>
+                    <button class="btn btn-danger" type="button" (click)="userLogin()">User</button>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    <button class="btn btn-danger" type="button"(click)="docLogin()">Doctor</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="quotes">
+        <h3>You will be great with Us because We care ! </h3>
+        <h3>And Caring is our Responsibility. </h3>
+    </div>
+    <div class="doclist">
+        <div class="column">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-sm-offset-2">
+                    <br>
+                    <h5>List of Available Doctors :</h5>
+                    <div *ngFor="let brrElement of brr">
+                        <br>
+                        <h6>Dr. <span>{{ brrElement.name}}</span>, <span>{{brrElement.specialization}}</span>, <span>{{brrElement.experience}} years of Experience</span></h6>
+                        <br>
+                        <!-- <p>Your specialization is <span>{{brrElement.specialization}}</span></p>
+                        <p>You have <span>{{brrElement.experience}} years of experience.</span></p> -->
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    
+    <div class="comments">
+        <div class="column">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-sm-offset-2">
+                    <br>
+                    <br>
+                    <br>
+                    <h3 class="say"> What people say about Us : </h3>
+                    <br>
+                    <h5 class="say">"Normally I consult doctors in my town, and they are just not good at all, 
+                        they have mbbs degree but are not good. dont know how found this app, 
+                        maybe some ad somewhere - fb maybe. but price is half as price in my town and doctor is much much better. 
+                        very happy, satisfied. have already recommednded to 3 people in family."
+                    </h5>
+                    <br>
+                    <h4 class="author">
+                        - Shankar Suman Kapoor (4.5/5)
+                    </h4>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h5 class="say">"Satisfied. thought as a user who is used to paying 600-1000 for consultation I would recommed increasing fee to 600 atleast. 
+                        people will pay that amount since it is difficult to find good doctors easily these days without long waits and appointments. 
+                        just friendly suggestion."
+                    </h5>
+                    <br>
+                    <h4 class="author">
+                        - Kamlesh Kumar Singh (4.6/5)
+                    </h4>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h5 class="say">"I cant believe m writing a review. Hv to admit am very very impressed. 
+                        great doctor. kind, freindly, listens wth patience. Diagnosed properly, 
+                        made me understand and focused on lifestyle changes as opposed to the easy option of giving strong meds. Thansk!"
+                    </h5>
+                    <br>
+                    <h4 class="author">
+                        - Hari Prasad (4.3/5)
+                    </h4>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+

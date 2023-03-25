@@ -1,0 +1,44 @@
+<div>
+    <app-header></app-header>
+    <app-datetime></app-datetime>
+    <div class="container" >
+        <div class="row" >
+            <div class="col-xs-12 col-sm-10 col-md-11 col-sm-offset-1 col-sm-offset-2">
+                <div *ngFor="let brrElement of brr" class="greeting">
+        <br>
+        <h6>Hi, <span>{{ brrElement.name}} !</span> Welcome to MyDoc App.</h6>
+    </div>
+    <br>
+    <div class="row" class="extra">
+        <div class="col-xs-12 col-sm-10 col-md-9 col-sm-offset-1 col-sm-offset-2">
+            <a
+            
+            class="list-group-item clearfix"
+            *ngFor="let doctor of doctors">
+            <div class="pull-left">
+                <span class="pull-right">
+                    <img
+                        src = {{doctor.imgPath}}
+                        alt="{{doctor.name}}" class="img-responsive" style="max-height: 90px">
+                </span>
+                <h4 class="list-group-item-heading">Dr. {{doctor.name}}</h4>
+                <p class="list-group-item-text">{{doctor.specialization}}</p>
+                <p class="list-group-item-text">{{doctor.experience}}</p>
+                <button class="btn btn-primary btn-sm" 
+                type="button"
+                (click)="bookAppointment(doctor.name)">Book Appointment
+                </button>
+            </div>
+            
+            <hr>
+            </a>
+        </div>
+        <!-- <div class="col-xs-12 col-sm-10 col-md-9 col-sm-offset-1 col-sm-offset-2">
+            <button class="btn btn-primary btn-lg btn-block" 
+                type="button"
+                (click)="bookAppointment()">Book Appointment
+            </button>
+            <br>
+        </div> -->
+    </div>
+</div>
