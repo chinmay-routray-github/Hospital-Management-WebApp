@@ -1,0 +1,71 @@
+{
+  "name": "sarthak",
+  "email": "sarthak@gmail.com",
+  "password": "Imsarthak",
+  "phone": "7978675104",
+  "question": "What is your first pet?",
+  "answer": "goldfish"
+}
+
+{
+  "name": "Arun",
+  "email": "arun@gmail.com",
+  "password": "Gaming@Arun",
+  "phone": "7978677869",
+  "question": "What is your birth city?",
+  "answer": "India"
+}
+
+{
+  "name": "Satya",
+  "email": "Veera@gmail.com",
+  "password": "VeeraSatya",
+  "phone": "8118677869",
+  "question": "What is your first school?",
+  "answer": "government"
+}
+
+{
+  "name": "Ramesh",
+  "email": "tukulu@gmail.com",
+  "password": "rameshnaik",
+  "phone": "7978677879",
+  "question": "What is your first pet?",
+  "answer": "dog"
+}
+
+{
+  "name": "Nikhil",
+  "email": "nikhilraj@gmail.com",
+  "password": "nikhilraj",
+  "phone": "7978677860",
+  "question": "What is your birth city?",
+  "answer": "India"
+}
+
+{
+  "name": "Shiva",
+  "email": "shivadutta@gmail.com",
+  "password": "Shiva@mandal1",
+  "phone": "8118677845",
+  "question": "What is your first school?",
+  "answer": "government"
+}
+
+{
+  "name": "Pankaj",
+  "email": "babunath@gmail.com",
+  "password": "pankajisright",
+  "phone": "8128677879",
+  "question": "What is your first pet?",
+  "answer": "cat"
+}
+
+{
+  "name": "Amit",
+  "email": "amit22@gmail.com",
+  "password": "Imamit",
+  "phone": "7978677657",
+  "question": "What is your birth city?",
+  "answer": "India"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Madhav",
+  "email": "maddy@yahoo.co.in",
+  "password": "madhavRao",
+  "phone": "7978653987",
+  "specialization": "Surgeon",
+  "experience": 10
+}
+
+{
+  "name": "Keshav",
+  "email": "keshavnath@gmail.com",
+  "password": "keshavNath",
+  "phone": "7978653123",
+  "specialization": "Neurologist",
+  "experience": 12
+}
+
+{
+  "name": "Aman",
+  "email": "aman@yahoo.co.in",
+  "password": "amanKumar",
+  "phone": "7978653658",
+  "specialization": "Cardiologist",
+  "experience": 15
+}
+
+{
+  "name": "Shweta",
+  "email": "shweta@gmail.com",
+  "password": "shwetaSingh",
+  "phone": "8118653987",
+  "specialization": "Gynecologist",
+  "experience": 13
+}
+
+{
+  "name": "Rahul Malhotra",
+  "email": "rahul@yahoo.co.in",
+  "password": "nameisRahul",
+  "phone": "7978656407",
+  "specialization": "General Physician",
+  "experience": 8
+}

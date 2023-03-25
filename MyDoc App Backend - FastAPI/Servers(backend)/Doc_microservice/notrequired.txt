@@ -1,0 +1,87 @@
+# @app.get("/doctor/info", status_code = status.HTTP_200_OK, tags = ['doctor'])
+# async def get_all_info(db : Session = Depends(get_db)):
+# 	response = db.query(doc_models.doctor).all()
+# 	return response
+
+# @app.get("/doctor/info_id/{id}", status_code = status.HTTP_200_OK, tags = ['doctor'])
+# async def get_a_doc_id(id : int, db : Session = Depends(get_db)):
+# 	response = db.query(doc_models.user).filter(doc_models.user.id == id).all()
+# 	if response == []:
+# 		raise HTTPException(detail = f"Doctor with id {id}, not found." , status_code = status.HTTP_404_NOT_FOUND)
+# 	return response
+
+# @app.get("/doctor/short_info_id/{id}", status_code = status.HTTP_200_OK, response_model = List[doc_schema.doc_short], tags = ['doctor'])
+# async def get_a_short_info_id(id : int, db : Session = Depends(get_db)):
+# 	response = db.query(doc_models.user).filter(doc_models.user.id == id).all()
+# 	if response == []:
+# 		raise HTTPException(detail = f"Doctor with id {id}, not found." , status_code = status.HTTP_404_NOT_FOUND)
+# 	return response
+
+# @app.put("/doctor/update_id/{id}", status_code = status.HTTP_200_OK, tags = ['doctor'])
+# async def update_doc_id( id : int, request : doc_schema.Doctor, db : Session = Depends(get_db)):
+# 	response = db.query(doc_models.doctor).filter(doc_models.doctor.id == id)
+# 	if not response.all():
+# 		raise HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail = f"Doctor with id {id} not there.")
+# 	response.update({"name": request.name, "email" : request.email, "password": Hash.bcrypt(request.password),
+# 			 "phone": request.phone, "specialization": request.specialization, "experience": request.experience})    #Very very important
+# 	db.commit()
+# 	return response
+
+
+# @app.delete("/doctor/delete_id/{id}", status_code = status.HTTP_200_OK, tags = ['doctor'])
+# async def destroy(id : int, db : Session = Depends(get_db)):
+# 	response = db.query(doc_models.doctor).filter(doc_models.doctor.id == id)
+# 	if response.all() == []:
+# 		raise HTTPException(status_code = 404, detail = f"Doctor with id {id} not found.")
+# 	response.delete(synchronize_session = False)
+# 	db.commit()
+# 	return {f"Doctor entry with id {id} was deleted."}
+
+
+# @app.get("/user/info", status_code = status.HTTP_200_OK, tags = ['user'])
+# async def get_all_info(db : Session = Depends(get_db)):
+# 	response = db.query(user_models.user).all()
+# 	return response
+
+
+# @app.get("/user/info_id/{id}", status_code = status.HTTP_200_OK, tags = ['user'])
+# async def get_a_user_id(id : int, db : Session = Depends(get_db)):
+# 	response = db.query(user_models.user).filter(user_models.user.id == id).all()
+# 	if response == []:
+# 		raise HTTPException(detail = f"User with id {id}, not found." , status_code = status.HTTP_404_NOT_FOUND)
+# 	return response
+
+
+# @app.get("/user/short_info", status_code = status.HTTP_200_OK, response_model = List[user_schema.user_short], tags = ['user'])
+# async def get_short_info(db : Session = Depends(get_db)):
+# 	response = db.query(user_models.user).all()
+# 	return response
+
+
+# @app.get("/user/short_info_id/{id}", status_code = status.HTTP_200_OK, response_model = List[user_schema.user_short], tags = ['user'])
+# async def get_a_short_info_id(id : int, db : Session = Depends(get_db)):
+# 	response = db.query(user_models.user).filter(user_models.user.id == id).all()
+# 	if response == []:
+# 		raise HTTPException(detail = f"User with id {id}, not found." , status_code = status.HTTP_404_NOT_FOUND)
+# 	return response
+
+
+# @app.put("/user/update_id/{id}", status_code = status.HTTP_200_OK, tags = ['user'])
+# async def update_user_id( id : int, request : user_schema.User, db : Session = Depends(get_db)):
+# 	response = db.query(user_models.user).filter(user_models.user.id == id)
+# 	if not response.all():
+# 		raise HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail = f"user with id {id} not there.")
+# 	response.update({"name": request.name, "email" : request.email, "password": Hash.bcrypt(request.password),
+# 			 "phone": request.phone, "question": request.question, "answer": request.answer})    #Very very important
+# 	db.commit()
+# 	return response
+
+
+# @app.delete("/user/delete_id/{id}", status_code = status.HTTP_200_OK, tags = ['user'])
+# async def destroy(id : int, db : Session = Depends(get_db)):
+# 	response = db.query(user_models.user).filter(user_models.user.id == id)
+# 	if response.all() == []:
+# 		raise HTTPException(status_code = 404, detail = f"user with id {id} not found.")
+# 	response.delete(synchronize_session = False)
+# 	db.commit()
+# 	return {f"user entry with id {id} was deleted."}
